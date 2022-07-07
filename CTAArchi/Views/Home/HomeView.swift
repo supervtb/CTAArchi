@@ -3,6 +3,8 @@ import ComposableArchitecture
 
 struct HomeView: View {
 
+    @State var firstAppear: Bool = true
+
     let store: Store<HomeState, HomeActions>
 
     var body: some View {
@@ -10,13 +12,11 @@ struct HomeView: View {
             let lessons = viewStore.lessons ?? [Lesson]()
             List(lessons) { lesson in
                 NavigationLink {
-                    ArticleView(
-                        title: lesson.title,
-                        text: lesson.description,
-                        author: lesson.author,
-                        date: lesson.date?.formatted(),
-                        imageUrlString: lesson.image
-                    )
+                    ArticleView(store: Store(
+                        initialState: ArticleState(lessonId: "1"),
+                        reducer: articleReducer,
+                        environment: ArticleEnvironment.live
+                    ))
                 } label: {
                     TwoLabelsView(
                         title: lesson.title,
@@ -32,7 +32,10 @@ struct HomeView: View {
             .navigationBarTitleDisplayMode(.automatic)
             .listStyle(.plain)
             .onAppear {
-                viewStore.send(.loadData)
+                if firstAppear {
+                    viewStore.send(.loadData)
+                    self.firstAppear = false
+                }
             }
         }
     }

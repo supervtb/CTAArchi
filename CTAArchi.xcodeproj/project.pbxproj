@@ -26,6 +26,10 @@
 		0F5956F02870EB750099429C /* HomeEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5956EF2870EB750099429C /* HomeEnvironment.swift */; };
 		0F5956F32870EE710099429C /* RootReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5956F22870EE710099429C /* RootReducer.swift */; };
 		0F5956F52870EED20099429C /* RootEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5956F42870EED20099429C /* RootEnvironment.swift */; };
+		0FDC98EC287752D1009F5240 /* ArticleState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDC98EB287752D1009F5240 /* ArticleState.swift */; };
+		0FDC98EE28775307009F5240 /* ArticleActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDC98ED28775307009F5240 /* ArticleActions.swift */; };
+		0FDC98F228775364009F5240 /* ArticleEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDC98F128775364009F5240 /* ArticleEnvironment.swift */; };
+		0FDC98F428775384009F5240 /* ArticleReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDC98F328775384009F5240 /* ArticleReducer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +51,10 @@
 		0F5956EF2870EB750099429C /* HomeEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeEnvironment.swift; sourceTree = "<group>"; };
 		0F5956F22870EE710099429C /* RootReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootReducer.swift; sourceTree = "<group>"; };
 		0F5956F42870EED20099429C /* RootEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootEnvironment.swift; sourceTree = "<group>"; };
+		0FDC98EB287752D1009F5240 /* ArticleState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleState.swift; sourceTree = "<group>"; };
+		0FDC98ED28775307009F5240 /* ArticleActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleActions.swift; sourceTree = "<group>"; };
+		0FDC98F128775364009F5240 /* ArticleEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleEnvironment.swift; sourceTree = "<group>"; };
+		0FDC98F328775384009F5240 /* ArticleReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleReducer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +141,7 @@
 			children = (
 				0F5956DF2870E5D30099429C /* RootState.swift */,
 				0F5956E42870E6660099429C /* HomeState.swift */,
+				0FDC98EB287752D1009F5240 /* ArticleState.swift */,
 			);
 			path = States;
 			sourceTree = "<group>";
@@ -142,6 +151,7 @@
 			children = (
 				0F5956E22870E5E90099429C /* RootAction.swift */,
 				0F5956E62870E6970099429C /* HomeActions.swift */,
+				0FDC98ED28775307009F5240 /* ArticleActions.swift */,
 			);
 			path = Actions;
 			sourceTree = "<group>";
@@ -169,6 +179,7 @@
 			children = (
 				0F5956EF2870EB750099429C /* HomeEnvironment.swift */,
 				0F5956F42870EED20099429C /* RootEnvironment.swift */,
+				0FDC98F128775364009F5240 /* ArticleEnvironment.swift */,
 			);
 			path = Environments;
 			sourceTree = "<group>";
@@ -178,6 +189,7 @@
 			children = (
 				0F5956F22870EE710099429C /* RootReducer.swift */,
 				0F57C57D287114A400840F2C /* HomeReducer.swift */,
+				0FDC98F328775384009F5240 /* ArticleReducer.swift */,
 			);
 			path = Reducers;
 			sourceTree = "<group>";
@@ -278,6 +290,7 @@
 			files = (
 				0F14C108286E298900D2CCE6 /* ContentView.swift in Sources */,
 				0F5956EA2870E6EE0099429C /* APIClient.swift in Sources */,
+				0FDC98EC287752D1009F5240 /* ArticleState.swift in Sources */,
 				0F57C57E287114A400840F2C /* HomeReducer.swift in Sources */,
 				0F5956F32870EE710099429C /* RootReducer.swift in Sources */,
 				0F57C5762871030400840F2C /* TwoLabelsView.swift in Sources */,
@@ -286,8 +299,11 @@
 				0F5956E52870E6660099429C /* HomeState.swift in Sources */,
 				0F5956E72870E6970099429C /* HomeActions.swift in Sources */,
 				0F5956E32870E5E90099429C /* RootAction.swift in Sources */,
+				0FDC98EE28775307009F5240 /* ArticleActions.swift in Sources */,
 				0F5956F02870EB750099429C /* HomeEnvironment.swift in Sources */,
 				0F5956F52870EED20099429C /* RootEnvironment.swift in Sources */,
+				0FDC98F228775364009F5240 /* ArticleEnvironment.swift in Sources */,
+				0FDC98F428775384009F5240 /* ArticleReducer.swift in Sources */,
 				0F5956ED2870EA150099429C /* HomeView.swift in Sources */,
 				0F5956E02870E5D30099429C /* RootState.swift in Sources */,
 				0F14C106286E298900D2CCE6 /* CTAArchiApp.swift in Sources */,
