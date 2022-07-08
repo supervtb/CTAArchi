@@ -12,5 +12,8 @@ let articleReducer = Reducer<ArticleState, ArticleActions, ArticleEnvironment> {
             .fetchLesson(state.lessonId)
             .receive(on: environment.mainQueue)
             .catchToEffect(ArticleActions.dataLoaded)
+    case .toggleFavorite:
+        state.isFavorite = !state.isFavorite
+        return .none
     }
 }
