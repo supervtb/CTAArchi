@@ -115,7 +115,11 @@
 		0F57C5732871027000840F2C /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				0F5956E62870E6970099429C /* HomeActions.swift */,
 				0F5956EC2870EA150099429C /* HomeView.swift */,
+				0F5956E42870E6660099429C /* HomeState.swift */,
+				0F57C57D287114A400840F2C /* HomeReducer.swift */,
+				0F5956EF2870EB750099429C /* HomeEnvironment.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -132,6 +136,10 @@
 			isa = PBXGroup;
 			children = (
 				0F57C57B28710A6A00840F2C /* ArticleView.swift */,
+				0FDC98EB287752D1009F5240 /* ArticleState.swift */,
+				0FDC98ED28775307009F5240 /* ArticleActions.swift */,
+				0FDC98F128775364009F5240 /* ArticleEnvironment.swift */,
+				0FDC98F328775384009F5240 /* ArticleReducer.swift */,
 			);
 			path = Article;
 			sourceTree = "<group>";
@@ -140,8 +148,6 @@
 			isa = PBXGroup;
 			children = (
 				0F5956DF2870E5D30099429C /* RootState.swift */,
-				0F5956E42870E6660099429C /* HomeState.swift */,
-				0FDC98EB287752D1009F5240 /* ArticleState.swift */,
 			);
 			path = States;
 			sourceTree = "<group>";
@@ -150,8 +156,6 @@
 			isa = PBXGroup;
 			children = (
 				0F5956E22870E5E90099429C /* RootAction.swift */,
-				0F5956E62870E6970099429C /* HomeActions.swift */,
-				0FDC98ED28775307009F5240 /* ArticleActions.swift */,
 			);
 			path = Actions;
 			sourceTree = "<group>";
@@ -177,9 +181,7 @@
 		0F5956EE2870EB5D0099429C /* Environments */ = {
 			isa = PBXGroup;
 			children = (
-				0F5956EF2870EB750099429C /* HomeEnvironment.swift */,
 				0F5956F42870EED20099429C /* RootEnvironment.swift */,
-				0FDC98F128775364009F5240 /* ArticleEnvironment.swift */,
 			);
 			path = Environments;
 			sourceTree = "<group>";
@@ -188,8 +190,6 @@
 			isa = PBXGroup;
 			children = (
 				0F5956F22870EE710099429C /* RootReducer.swift */,
-				0F57C57D287114A400840F2C /* HomeReducer.swift */,
-				0FDC98F328775384009F5240 /* ArticleReducer.swift */,
 			);
 			path = Reducers;
 			sourceTree = "<group>";
