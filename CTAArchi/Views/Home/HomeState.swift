@@ -3,11 +3,7 @@ import ComposableArchitecture
 
 struct HomeState: Equatable {
 
-    var lessons: IdentifiedArrayOf<Lesson>?
+    var lessons: IdentifiedArrayOf<Lesson> = []
     var selection: Identified<Lesson.ID, ArticleState?>?
     var isLoading = false
-
-    static func == (lhs: HomeState, rhs: HomeState) -> Bool {
-        return lhs.lessons.hashValue == rhs.lessons.hashValue
-    }
 }
