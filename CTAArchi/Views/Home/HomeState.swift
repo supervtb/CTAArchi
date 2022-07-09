@@ -1,8 +1,10 @@
 import SwiftUI
+import ComposableArchitecture
 
 struct HomeState: Equatable {
 
-    var lessons: [Lesson]?
+    var lessons: IdentifiedArrayOf<Lesson>?
+    var selection: Identified<Lesson.ID, ArticleState?>?
     var isLoading = false
 
     static func == (lhs: HomeState, rhs: HomeState) -> Bool {
