@@ -54,7 +54,7 @@ struct ArticleView: View {
                                 viewStore.send(.toggleFavorite)
                             } label: {
                                 Image(systemName: viewStore.isFavorite ? "star.fill" : "star")
-                                    .tint(.black)
+                                    .foregroundColor(Color("accent"))
                             }
                         }
                     }

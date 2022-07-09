@@ -40,7 +40,7 @@ struct HomeView: View {
                 .listRowBackground(EmptyView())
                 .listRowSeparator(.hidden)
             }.refreshable(action: {
-                viewStore.send(.loadData)
+                await viewStore.send(.loadData, while: \.isLoading)
             })
             .navigationTitle("Learn Now")
             .navigationBarTitleDisplayMode(.automatic)

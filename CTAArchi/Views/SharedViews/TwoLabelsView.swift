@@ -7,6 +7,7 @@ struct TwoLabelsView: View {
     let subtitle: String?
     let date: String?
     let imageUrlString: String?
+    let isFavorite: Bool = false
 
     var body: some View {
         HStack(alignment: .top, spacing: 16) {
@@ -30,6 +31,7 @@ struct TwoLabelsView: View {
                 Spacer()
             }
             Spacer()
+            Image(systemName: isFavorite ? "star.fill" : "star" ).foregroundColor(Color("accent"))
         }
         .padding()
         .border(.gray, width: 0.5)
