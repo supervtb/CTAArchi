@@ -4,7 +4,7 @@ let homeReducer = Reducer<HomeState, HomeActions, HomeEnvironment> { state, acti
     switch action {
     case let .dataLoaded(.success(response)):
         state.isLoading = false
-        state.lessons = response
+        state.lessons = response.map({ IdentifiedArrayOf(uniqueElements: $0) })
         return .none
     case .dataLoaded(.failure):
         state.isLoading = false

@@ -10,9 +10,9 @@ struct HomeView: View {
     var body: some View {
         WithViewStore(self.store) { viewStore in
 
-            let lessons = viewStore.lessons ?? [Lesson]()
+            let lessons = viewStore.lessons // .map({ $0.elements }) ?? [Lesson]()
             
-            if lessons.isEmpty {
+            if lessons == nil {
                 ProgressView()
                     .onAppear {
                         if firstAppear {
@@ -21,7 +21,7 @@ struct HomeView: View {
                         }
                     }
             } else {
-                List(lessons) { lesson in
+                List(lessons!) { lesson in
                     NavigationLink {
                         ArticleView(store: Store(
                             initialState: ArticleState(lessonId: lesson.id),
