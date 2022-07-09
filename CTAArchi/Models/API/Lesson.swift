@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct Lesson: Codable, Identifiable, Hashable {
+struct Lesson: Codable, Identifiable, Equatable {
     
     var id = UUID().uuidString
     let title: String?
