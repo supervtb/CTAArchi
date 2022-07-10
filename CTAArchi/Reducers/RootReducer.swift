@@ -10,7 +10,7 @@ let rootReducer = Reducer<RootState, RootAction, RootEnvironment>.combine(
         default:
             return .none
         }
-    }, homeReducer.pullback(state: \.home, action: /RootAction.home, environment: { .init(apiClient: $0.apiClient, mainQueue: $0.mainQueue) })
+    }, homeReducer.pullback(state: \.home, action: /RootAction.home, environment: { .init(apiClient: $0.apiClient, dbClient: .live, mainQueue: $0.mainQueue) })
 )
 .debug()
 .signpost()
