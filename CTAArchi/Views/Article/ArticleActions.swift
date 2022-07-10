@@ -1,5 +1,5 @@
 enum ArticleActions: Equatable {
     case loadData
-    case dataLoaded(Result<Lesson?, APIClient.Failure>)
+    case dataLoaded(Result<Lesson?, DBClient.Failure>)
     case toggleFavorite
 }

@@ -7,7 +7,7 @@ articleReducer.optional()
     .pullback(
         state: \HomeState.selection,
         action: /HomeActions.article,
-        environment: { _ in ArticleEnvironment(apiClient: .live, mainQueue: .main) }
+        environment: { _ in ArticleEnvironment(apiClient: .live, dbClient: .live, mainQueue: .main) }
     )
     .combined(
         with: Reducer<
@@ -29,7 +29,7 @@ articleReducer.optional()
 
             case .loadData:
                 state.isLoading = true
-                return environment.apiClient
+                return environment.dbClient
                     .fetchLessons()
                     .receive(on: environment.mainQueue)
                     .catchToEffect(HomeActions.dataLoaded)

@@ -8,7 +8,7 @@ let articleReducer = Reducer<ArticleState, ArticleActions, ArticleEnvironment> {
     case .dataLoaded(.failure):
         return .none
     case .loadData:
-        return environment.apiClient
+        return environment.dbClient
             .fetchLesson(state.lessonId)
             .receive(on: environment.mainQueue)
             .catchToEffect(ArticleActions.dataLoaded)
