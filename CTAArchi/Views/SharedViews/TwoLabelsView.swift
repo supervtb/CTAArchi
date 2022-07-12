@@ -3,11 +3,12 @@ import Kingfisher
 
 struct TwoLabelsView: View {
 
+    @State var isFavorite: Bool = false
+
     let title: String?
     let subtitle: String?
     let date: String?
     let imageUrlString: String?
-    let isFavorite: Bool = false
 
     var body: some View {
         HStack(alignment: .top, spacing: 16) {
@@ -31,7 +32,12 @@ struct TwoLabelsView: View {
                 Spacer()
             }
             Spacer()
-            Image(systemName: isFavorite ? "star.fill" : "star" ).foregroundColor(Color("accent"))
+            Button {
+                isFavorite.toggle()
+            } label: {
+                Image(systemName: isFavorite ? "star.fill" : "star" ).foregroundColor(Color("accent"))
+            }
+            .buttonStyle(PlainButtonStyle())
         }
         .padding()
         .border(.gray, width: 0.5)

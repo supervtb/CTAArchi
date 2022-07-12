@@ -15,15 +15,21 @@ extension DBClient {
 
     static let live = Self(
         fetchLessons: {
-            Effect.task {
-                let data: [Lesson] = try await Firestore.firestore()
-                    .collection("lessons")
-                    .getDocuments()
-                    .documents
-                    .map({ try $0.data(as: Lesson.self) })
-                return data
+            return Effect.run { subscriber in
+                let cancelable = AnyCancellable {}
+                Firestore.firestore().collection("lessons").order(by: "date").addSnapshotListener { querySnapshot, error in
+                    guard let documents = querySnapshot?.documents.reversed() else {
+                        return
+                    }
+                    do {
+                        let lessons: [Lesson] = try documents.map { try $0.data(as: Lesson.self) }
+                        subscriber.send(lessons)
+                    } catch {
+                        subscriber.send(nil)
+                    }
+                }
+                return cancelable
             }
-            .mapError { _ in Failure() }
             .eraseToEffect()
         }, fetchLesson: { id in
             Effect.task {

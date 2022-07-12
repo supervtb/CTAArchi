@@ -31,6 +31,7 @@ struct HomeView: View {
                     )
                 ) {
                     TwoLabelsView(
+                        isFavorite: false,
                         title: lesson.title,
                         subtitle: lesson.description,
                         date: lesson.date?.formatted(),

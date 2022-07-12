@@ -4,4 +4,5 @@ enum HomeActions: Equatable {
     case article(ArticleActions)
     case setNavigation(selection: String?)
     case setNavigationSelectionCompleted
+    case toggleIsFavorite(id: String)
 }

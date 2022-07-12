@@ -40,7 +40,7 @@ articleReducer.optional()
             case let .setNavigation(selection: .some(leson)):
                 state.selection = Identified(nil, id: leson)
                 return Effect(value: .setNavigationSelectionCompleted)
-                    .delay(for: 0, scheduler: environment.mainQueue)
+                    .delay(for: 0.2, scheduler: environment.mainQueue)
                     .eraseToEffect()
                     .cancellable(id: CancelId.self)
 
@@ -50,7 +50,16 @@ articleReducer.optional()
 
             case .setNavigationSelectionCompleted:
                 guard let id = state.selection?.id else { return .none }
-                state.selection?.value = ArticleState(lessonId: state.lessons[id: id]?.id ?? "")
+                let isFavorite = state.favoriteLessons.contains(state.lessons[id: id]?.id ?? "")
+                state.selection?.value = ArticleState(lessonId: state.lessons[id: id]?.id ?? "", isFavorite: isFavorite)
+                return .none
+                
+            case let .toggleIsFavorite(id):
+                if state.favoriteLessons.contains(id) {
+                    state.favoriteLessons.removeAll(where: { $0 == id })
+                } else {
+                    state.favoriteLessons.append(id)
+                }
                 return .none
             }
         }
